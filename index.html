@@ -50,6 +50,26 @@
             font-size: 0.8rem; color: #854d0e; margin-bottom: 20px; font-weight: 500;
         }
 
+        .intro-text-box {
+            width: 100%;
+            max-height: 52vh;
+            overflow-y: auto;
+            background: #fff;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 16px;
+            text-align: left;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #422006;
+            box-shadow: inset 0 2px 4px rgba(202, 138, 4, 0.05);
+            scrollbar-width: thin;
+            scrollbar-color: #eab308 transparent;
+        }
+        .intro-text-box p {
+            margin: 0 0 12px 0;
+        }
         /* BOTTONE GIALLO ELEGANTE */
         .btn-gold {
             background: #eab308;
@@ -156,14 +176,18 @@
 <body>
 
     <!-- INTRO -->
-    <div id="intro-screen">
-        <div style="height: 20px;"></div>
+  <div id="intro-screen">
+        <div style="height: 10px;"></div>
         <div class="intro-content">
             <h2>Il nostro Travel Book 🌍</h2>
-            <video id="trailer-video" autoplay muted loop playsinline>
-                <source src="trailer.mp4" type="video/mp4">
-            </video>
-            <div class="voice-credit">Voce narrante: Emma 🎙️</div>
+            <div class="intro-text-box">
+                <p>Ti starai chiedendo cosa si è messa a fare questa scema che hai per amica. Ed è una domanda legittima. Questo regalo è stato un po' Crazy, perché doveva essere il tuo regalo di natale, ma quello di compleanno ha subito dei problemini tecnici e c'è stata un inversione, ma dovrebbe avere senso lo stesso. Ho pensato tanto tanto tanto a cosa ti posso regalare a questo punto della nostra amicizia in cui ormai tutti i gioielli, concerti o tatuaggi sono stati coperti. E quindi purtroppo a questo giro ti tocca un regalo stupidino.</p>
+                <p>La nostra amicizia è "nata" potremmo dire, o meglio è iniziata a trasformarsi in ciò che è ora, dal nostro primo viaggio insieme a Vienna. Due piccole bambine sceme e molto distrutte dalla vita, che per la prima volta hanno trovato qualcuno che le sostenesse veramente. il modo in cui ci siamo salvate a vicenda in quel periodo. Ci siamo poi conosciute meglio, con tutti i nostri piccoli difetti, pregi, insicurezze e follie nei 1000 treni che abbiamo preso in interrail, ci siamo viste puzzone e stanche, tristi, circondate da pile di vestiti da riordinare, felici, commosse, libere. Ci siamo viste crescere.</p>
+                <p>Poi viaggiare è diventata una necessità, con il nostro contratto fisso con trenitalia per vederci incastrando Bussolengo, Bologna e rovereto. E quando siamo andate a Stoccolma e Jesolo ormai i nostri viaggi si erano già trasformati in routine, senza quella frenesia e fretta di vedere tutto, senza quel bisogno di stare in pace da sole, siamo diventate come una vecchia coppia sposata, e mi sono resa conto che una situazione come il viaggio, di solito nuova, piena di emozioni forti e contrastanti e di avventure fosse diventata famigliare, serena, come sentirsi a casa. Perché la verità è che ogni volta che faccio qualcosa con te, che sia nuova, che mi spaventi o altro, mi sembra sempre di essere a casa, al sicuro.</p>
+                <p>Quando penso al nostro rapporto e a tutti i viaggi che abbiamo fatto mi rendo conto che ho scoperto il mondo con te, sia letteralmente che metaforicamente, che tutto ciò che ho esplorato l'ho fatto sempre con te al mio fianco, mai da sola, sia nelle cose belle che in quelle brutte. E ormai se guardo la cartina penso a così tanti posti che ho condiviso con te, e penso che il mondo non sia altro che un insieme di avventure che voglio scoprire insieme a te, un parco giochi tutto nostro.</p>
+                <p>Quindi questa piccola app è un insieme dei nostri viaggi, delle nostre foto, per mappre tutti i posti che scopriremo nei prossimi 80 anni assieme, tutte le avventure che faremo. Così un giorno che sia a dei nipotini, a degli infermieri della casa di riposo o a dei poveri ragazzi infila con noi alle casse del supermercato, potremo raccontare tutte le storie che abbiamo vissuto assieme, le cose che abbiamo visto e fatto. Non ho idea di chi diventeremo, cosa faremo e che strade prenderemo ma so con certezza, senza un ombra di dubbio, che quando moriremo (tiè) saremo ancora amiche, che arriveremo ad essere vecchie assieme e che, tra tutte le storie che racconterò, quelle in cui ci sei tu saranno sempre le mie preferite, tra 80 anni come adesso.</p>
+                <p style="margin-bottom: 0;">Non vedo l'ora di vederti scoprire il mondo e di esplorarlo insieme a te, ti voglio letteralmente un mondo di bene fiorellino. 🌸</p>
+            </div>
         </div>
         <button class="btn-gold" onclick="startApp()">Inizia il Viaggio ✨</button>
     </div>
@@ -513,10 +537,7 @@
             container.appendChild(card);
         });
 
-        function startApp() {
-            const video = document.getElementById('trailer-video');
-            try { video.pause(); } catch(e){}
-            
+       function startApp() {
             const intro = document.getElementById('intro-screen');
             intro.style.opacity = '0';
             intro.style.transition = 'opacity 0.4s ease';
